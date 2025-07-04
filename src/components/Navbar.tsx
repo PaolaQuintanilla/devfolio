@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, useScroll, AnimatePresence } from "framer-motion";
-import { Code2, Sun, Moon } from "lucide-react";
+import { Code2, Sun, Moon, X, Menu } from "lucide-react";
 import { useTheme } from "../context/useTheme";
 
 const Navbar = () => {
@@ -78,7 +78,7 @@ const Navbar = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => toggleDarkMode(isDarkMode ? "light" : "darks")}
+            onClick={() => toggleDarkMode(isDarkMode ? "light" : "dark")}
             className={`p-2 rounded-full transition-colors ${
               isDarkMode
                 ? "text-gray-400 hover:text-white hover:bg-gray-800"
@@ -89,7 +89,7 @@ const Navbar = () => {
           </motion.button>
 
           {/* Mobile Menu Toggle */}
-          <motion.button
+          {/* <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -101,6 +101,19 @@ const Navbar = () => {
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <Sun size={20} /> : <Moon size={20} />}
+          </motion.button> */}
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className={`p-2 rounded-full transition-colors ${
+              isDarkMode
+                ? "text-gray-400 hover:text-white hover:bg-gray-800"
+                : "text-gray-600 hover:text-gray-900 hover:bg-gray-200"
+            }`}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          >
+            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </motion.button>
         </div>
       </div>
