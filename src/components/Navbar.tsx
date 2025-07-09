@@ -6,7 +6,6 @@ import { useTheme } from "../context/useTheme";
 const Navbar = () => {
   const { isDarkMode, toggleDarkMode } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  // console.log(isDarkMode, "isDarkMode");
   const { scrollYProgress } = useScroll();
 
   const scrollToSection = (sectionId: string): void => {
@@ -87,21 +86,6 @@ const Navbar = () => {
           >
             {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
           </motion.button>
-
-          {/* Mobile Menu Toggle */}
-          {/* <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className={`p-2 rounded-full transition-colors ${
-              isDarkMode
-                ? "text-gray-400 hover:text-white hover:bg-gray-800"
-                : "text-gray-600 hover:text-gray-900 hover:bg-gray-200"
-            }`}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <Sun size={20} /> : <Moon size={20} />}
-          </motion.button> */}
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -117,6 +101,7 @@ const Navbar = () => {
           </motion.button>
         </div>
       </div>
+      {/* Mobile Menu Toggle */}
       {/* Mobile menu toggle would go here */}
       <AnimatePresence>
         {isMenuOpen && (
