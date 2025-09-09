@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform, type Variants } from "framer-motion";
 import { ArrowDown, Mail } from "lucide-react";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
-// import PROFILE_PIC from "../assets/images/profile-img.jpg";
+import PROFILE_PIC from "../../assets/profile.jpg";
 import { useTheme } from "../../context/useTheme";
 // import { FaGithub, FaLinkedin } from "react-icons/fa";
 
@@ -127,7 +127,7 @@ const HeroSection = () => {
                     } shadow-2xl`}
                   >
                     <img
-                      // src={PROFILE_PIC}
+                      src={PROFILE_PIC}
                       alt="Profile"
                       className="w-full h-full object-cover"
                     />
@@ -141,7 +141,7 @@ const HeroSection = () => {
                       ease: "linear",
                     }}
                     className={`absolute -inset-2 rounded-2xl border ${
-                      isDarkMode ? "border-blue-500/20" : "border-blue-400/30"
+                      isDarkMode ? "border-purple-500/20" : "border-blue-400/30"
                     }`}
                   />
                 </div>
@@ -385,11 +385,14 @@ const HeroSection = () => {
               initial="hidden"
               animate="visible"
               variants={imageVariants}
-              className="hidden lg:flex lg:justify-end lg:items-center"
+              className="flex justify-end lg:justify-center"
             >
-              <div className="">
+              <div className="relative">
                 {/* Tech Stack - Desktop*/}
-                <motion.div variants={itemVariants} className="">
+                <motion.div
+                  variants={itemVariants}
+                  className="flex items-center space-x-8 text-sm Tracking-widest -top-16 -left-28 absolute"
+                >
                   <span
                     className={`${
                       isDarkMode ? "text-gray-600" : "text-gray-500"
@@ -417,8 +420,7 @@ const HeroSection = () => {
                       isDarkMode ? "text-gray-700" : "text-gray-400"
                     }`}
                   >
-                    {" "}
-                    .{" "}
+                    .
                   </span>
                   <span
                     className={`${
@@ -432,8 +434,7 @@ const HeroSection = () => {
                       isDarkMode ? "text-gray-700" : "text-gray-400"
                     }`}
                   >
-                    {" "}
-                    .{" "}
+                    .
                   </span>
                   <span
                     className={`${
@@ -443,6 +444,47 @@ const HeroSection = () => {
                     MongoDB
                   </span>
                 </motion.div>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  className={`w-80 h-96 rounded-3xl overflow-hidden border-4 ${
+                    isDarkMode ? "border-gray-800" : "border-gray-300"
+                  } shadow-2xl`}
+                >
+                  <img
+                    src={PROFILE_PIC}
+                    alt="Profile"
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{
+                    duration: 20,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                  className=""
+                />
+                {/* Decorative elements */}
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{
+                    duration: 20,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                  className="absolute -inset-4 rounded-3xl border-2 border-purple-500/20"
+                />
+
+                <motion.div
+                  animate={{ rotate: -360 }}
+                  transition={{
+                    duration: 30,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                  className="absolute -inset-8 rounded-3xl border-2 border-purple-500/10"
+                />
               </div>
             </motion.div>
           </div>
