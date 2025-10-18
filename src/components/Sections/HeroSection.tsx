@@ -3,6 +3,7 @@ import { ArrowDown, Mail } from "lucide-react";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 import PROFILE_PIC from "../../assets/profile.jpg";
 import { useTheme } from "../../context/useTheme";
+import { containerVariants, itemVariants } from "../../utils/helper";
 // import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const HeroSection = () => {
@@ -17,28 +18,28 @@ const HeroSection = () => {
     }
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
-  };
+  // const containerVariants = {
+  //   hidden: { opacity: 0 },
+  //   visible: {
+  //     opacity: 1,
+  //     transition: {
+  //       staggerChildren: 0.2,
+  //       delayChildren: 0.3,
+  //     },
+  //   },
+  // };
 
-  const itemVariants: Variants = {
-    hidden: { y: 30, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  };
+  // const itemVariants: Variants = {
+  //   hidden: { y: 30, opacity: 0 },
+  //   visible: {
+  //     y: 0,
+  //     opacity: 1,
+  //     transition: {
+  //       duration: 0.8,
+  //       ease: "easeOut",
+  //     },
+  //   },
+  // };
 
   const textVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
@@ -158,7 +159,7 @@ const HeroSection = () => {
               </motion.div>
 
               <motion.h1
-                variants={itemVariants}
+                variants={itemVariants as Variants}
                 className="text-3xl md:text-5xl font-light mb-6 leading-tight"
               >
                 <span className={isDarkMode ? "text-white" : "text-gray-900"}>
@@ -174,7 +175,7 @@ const HeroSection = () => {
               </motion.h1>
 
               <motion.p
-                variants={itemVariants}
+                variants={itemVariants as Variants}
                 className={`text-base md:text-lg ${
                   isDarkMode ? "text-gray-400" : "text-gray-600"
                 } mb-8 max-w-xl mx-auto font-light leading-relaxed`}
@@ -185,7 +186,7 @@ const HeroSection = () => {
 
               {/* CTA Buttons - Mobile */}
               <motion.div
-                variants={itemVariants}
+                variants={itemVariants as Variants}
                 className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
               >
                 <motion.button
@@ -211,7 +212,7 @@ const HeroSection = () => {
               </motion.div>
               {/* Social Links - Mobile */}
               <motion.div
-                variants={itemVariants}
+                variants={itemVariants as Variants}
                 className="flex justify-center gap-4 mt-8"
               >
                 {[
@@ -251,7 +252,7 @@ const HeroSection = () => {
               </motion.div>
               {/* Tech Stack - Mobile */}
               <motion.div
-                variants={itemVariants}
+                variants={itemVariants as Variants}
                 className="flex flex-wrap justify-center items-center gap-x-3 gap-y-2 mt-6 text-xs"
                 // className="flex justify-center item-center space-x-6 text-xs uppercase tracking-wider flex-wrap"
               >
@@ -304,7 +305,7 @@ const HeroSection = () => {
                 Full Stack Developer
               </motion.div>
               <motion.h1
-                variants={itemVariants}
+                variants={itemVariants as Variants}
                 className="text-5xl xl:text-7xl font-light mb-8 leading-tight"
               >
                 <span
@@ -324,7 +325,7 @@ const HeroSection = () => {
                 </span>
               </motion.h1>
               <motion.p
-                variants={itemVariants}
+                variants={itemVariants as Variants}
                 className={`text-xl ${
                   isDarkMode ? "text-gray-400" : "text-gray-600"
                 } mb-12 font-light leading-relaxed max-w-lg`}
@@ -333,7 +334,10 @@ const HeroSection = () => {
                 technologies and thoughtful user experiences.
               </motion.p>
               {/* CTA Buttons - Desktop */}
-              <motion.div variants={itemVariants} className="flex gap-6 mb-8">
+              <motion.div
+                variants={itemVariants as Variants}
+                className="flex gap-6 mb-8"
+              >
                 <motion.button
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.98 }}
@@ -357,7 +361,7 @@ const HeroSection = () => {
               </motion.div>
               {/* Social Links - Desktop */}
               <motion.div
-                variants={itemVariants}
+                variants={itemVariants as Variants}
                 className="flex space-x-6 mb-12"
               >
                 {[
@@ -390,7 +394,7 @@ const HeroSection = () => {
               <div className="relative">
                 {/* Tech Stack - Desktop*/}
                 <motion.div
-                  variants={itemVariants}
+                  variants={itemVariants as Variants}
                   className="flex items-center space-x-8 text-sm Tracking-widest -top-16 -left-28 absolute"
                 >
                   <span
