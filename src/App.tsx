@@ -12,7 +12,6 @@ const App = () => {
         <SkillsSection />
       </div>
     </ThemeProvider>
-    // 47:50
   );
 };
 

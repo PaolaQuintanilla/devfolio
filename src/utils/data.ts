@@ -10,7 +10,7 @@ import {
   // Zap,
   Database,
   Server,
-  // Cloud,
+  Cloud,
   // Mail,
   // MapPin,
   // Phone,
@@ -34,7 +34,7 @@ export const SKILLS_CATEGORY = [
     skills: [
       { name: "React", level: 95, color: "bg-blue-500" },
       { name: "TypeScript", level: 90, color: "bg-blue-600" },
-      { name: "Next.js", level: 88, color: "bg-gray-800" },
+      { name: "Next.js", level: 88, color: "bg-gray-700" },
       { name: "Tailwind CSS", level: 92, color: "bg-cyan-500" },
       { name: "Framer Motion", level: 85, color: "bg-pink-500" },
     ],
@@ -65,7 +65,7 @@ export const SKILLS_CATEGORY = [
   },
   {
     title: "DevOps",
-    icon: "Cloud",
+    icon: Cloud,
     description: "Deploying and scaling applications",
     skills: [
       {
