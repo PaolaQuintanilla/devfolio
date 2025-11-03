@@ -77,8 +77,8 @@ const ProjectsSection = () => {
               key={project.id}
               project={project}
               index={index}
-              isDarkMode={undefined}
-            ></ProjectCard>
+              isDarkMode={isDarkMode}
+            />
           ))}
         </motion.div>
       </div>

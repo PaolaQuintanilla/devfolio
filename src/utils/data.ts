@@ -23,8 +23,20 @@ import {
 // import PROJECT_IMG_3 from "../assets/images/project-3.png";
 // import PROJECT_IMG_4 from "../assets/images/project-4.png";
 // import PROJECT_IMG_5 from "../assets/images/project-5.png";
-// import PROJECT_IMG_6 from "../assets/images/project-6.png";
+import PROJECT_IMG_6 from "../assets/images/schoolManagement.png";
 // import PROJECT_IMG_7 from "../assets/images/project-7.png";
+
+export type Project = {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  liveUrl: string;
+  githubUrl: string;
+  featured: boolean;
+  category: string;
+};
 
 export const SKILLS_CATEGORY = [
   {
@@ -116,7 +128,7 @@ export const STATS = [
   { number: "28+", label: "Technologies" },
 ];
 
-export const PROJECTS = [
+export const PROJECTS: Project[] = [
   {
     id: 1,
     title: "Church Info & Admin Portal",
@@ -124,9 +136,9 @@ export const PROJECTS = [
       "Web app providing certificate generation, book catalog, and church leader directory. Deployed with Vercel for reliability and speed.",
     image: "PROJECT_IMG_1",
     tags: ["React", "Tailwind", "Formik", "Vercel"],
-    liveUrl: "#",
+    liveUrl: "https://mission-bolivia.vercel.app/",
     githubUrl: "#",
-    featured: false,
+    featured: true,
     category: "Full Stack",
   },
   {
@@ -198,7 +210,7 @@ export const PROJECTS = [
     title: "School Genesis Platform",
     description:
       "Educational management platform for schools, featuring teacher, student, and parent modules, designed with .NET microservices.",
-    image: "PROJECT_IMG_6",
+    image: PROJECT_IMG_6,
     tags: [
       ".NET",
       "C#",
