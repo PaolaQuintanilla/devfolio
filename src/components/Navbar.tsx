@@ -133,6 +133,12 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Scroll Progress Bar */}
+      <motion.div
+        className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-500 origin-left"
+        style={{ scaleX: scrollYProgress }}
+      />
     </motion.nav>
   );
   // <motion.nav

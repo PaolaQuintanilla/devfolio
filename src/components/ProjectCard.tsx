@@ -3,6 +3,10 @@ import type { Project } from "../utils/data";
 import { ExternalLink } from "lucide-react";
 import { FiGithub } from "react-icons/fi";
 
+// Shown when a project has no image (empty) or its image fails to load.
+const PLACEHOLDER_IMG =
+  "data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200'%3E%3Crect width='400' height='200' fill='%231e293b'/%3E%3Ctext x='50%25' y='50%25' fill='%2364748b' font-family='sans-serif' font-size='16' text-anchor='middle' dominant-baseline='middle'%3EProject Preview%3C/text%3E%3C/svg%3E";
+
 export const ProjectCard = ({
   project,
   isDarkMode,
@@ -36,13 +40,17 @@ export const ProjectCard = ({
           isDarkMode
             ? "bg-gray-900/50 border-gray-800 hover:border-gray-700 hover:shadow-2xl hover:shadow-blue-500/10"
             : "bg-white/80 border-gray-200 hover:border-gray-300 hover:shadow-2xl hover:shadow-blue-500/10"
-        } blackdrop-blur-sm`}
+        } backdrop-blur-sm`}
       >
         {/* project image */}
         <div className="relative overflow-hidden">
           <img
-            src={project.image}
+            src={project.image || PLACEHOLDER_IMG}
             alt={project.title}
+            onError={(e) => {
+              e.currentTarget.onerror = null;
+              e.currentTarget.src = PLACEHOLDER_IMG;
+            }}
             className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
           />
           {/* Featured badged */}
@@ -79,7 +87,7 @@ export const ProjectCard = ({
               initial={{ y: 20, opacity: 0.5 }}
               whileHover={{ y: 0, opacity: 1, scale: 1.05 }}
               transition={{ duration: 0.3, delay: 0.1 }}
-              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full flex item-center space-x-2 text-sm font-medium transition-colors"
+              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full flex items-center space-x-2 text-sm font-medium transition-colors"
               // onClick={() => {}}
             >
               <ExternalLink size={16} />
@@ -91,7 +99,7 @@ export const ProjectCard = ({
               initial={{ y: 20, opacity: 0.5 }}
               whileHover={{ y: 0, opacity: 1, scale: 1.05 }}
               transition={{ duration: 0.3, delay: 0.1 }}
-              className={`border-2 border-white text-white hover:bg-white hover:text-gray-900 px-4 py-2 rounded-full flex item-center  space-x-2 text-sm font-medium transition-all`}
+              className={`border-2 border-white text-white hover:bg-white hover:text-gray-900 px-4 py-2 rounded-full flex items-center space-x-2 text-sm font-medium transition-all`}
             >
               <FiGithub size={16} />
               <span>GitHub</span>
@@ -104,28 +112,28 @@ export const ProjectCard = ({
           <h3 className="text-xl font-medium mb-3 group-hover:text-blue-500 transition-colors">
             {project.title}
           </h3>
-        </div>
-        <p
-          className={`text-sm leading-relaxed mb-4 ${
-            isDarkMode ? "text-gray-400" : "text-gray-600"
-          }`}
-        >
-          {project.description}
-        </p>
-        {/* tech stack tag */}
-        <div className="flex flex-wrap gap-2">
-          {project.tags.map((tag, tagIndex) => (
-            <span
-              key={tagIndex}
-              className={`text-xs px-3 py-1 rounded-full ${
-                isDarkMode
-                  ? "bg-gray-800 text-gray-300"
-                  : "bg-gray-100 text-gray-700"
-              }`}
-            >
-              {tag}
-            </span>
-          ))}
+          <p
+            className={`text-sm leading-relaxed mb-4 ${
+              isDarkMode ? "text-gray-400" : "text-gray-600"
+            }`}
+          >
+            {project.description}
+          </p>
+          {/* tech stack tag */}
+          <div className="flex flex-wrap gap-2">
+            {project.tags.map((tag, tagIndex) => (
+              <span
+                key={tagIndex}
+                className={`text-xs px-3 py-1 rounded-full ${
+                  isDarkMode
+                    ? "bg-gray-800 text-gray-300"
+                    : "bg-gray-100 text-gray-700"
+                }`}
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </motion.div>

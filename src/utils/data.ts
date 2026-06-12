@@ -23,7 +23,7 @@ import {
 // import PROJECT_IMG_3 from "../assets/images/project-3.png";
 // import PROJECT_IMG_4 from "../assets/images/project-4.png";
 // import PROJECT_IMG_5 from "../assets/images/project-5.png";
-import PROJECT_IMG_6 from "../assets/images/schoolManagement.png";
+// import PROJECT_IMG_6 from "../assets/images/schoolManagement.png";
 // import PROJECT_IMG_7 from "../assets/images/project-7.png";
 
 export type Project = {
@@ -56,9 +56,9 @@ export const SKILLS_CATEGORY = [
     icon: Server,
     description: "Building robust server-side solutions",
     skills: [
-      { name: "Node.js", level: 40, color: "bg-green-500" },
       { name: "C#", level: 60, color: "bg-gray-700" },
-      { name: "Python", level: 30, color: "bg-yellow-500" },
+      { name: ".NET Core", level: 60, color: "bg-purple-700" },
+      { name: "NestJS", level: 40, color: "bg-red-600" },
       { name: "GraphQL", level: 40, color: "bg-pink-600" },
       { name: "REST APIs", level: 60, color: "bg-orange-500" },
     ],
@@ -68,11 +68,11 @@ export const SKILLS_CATEGORY = [
     icon: Database,
     description: "Managing and optimizing data storage",
     skills: [
+      { name: "SQL Server", level: 60, color: "bg-red-500" },
+      { name: "MySQL", level: 60, color: "bg-blue-700" },
       { name: "MongoDB", level: 50, color: "bg-green-600" },
-      { name: "MySql", level: 60, color: "bg-blue-700" },
-      { name: "Sql Server", level: 50, color: "bg-red-500" },
+      { name: "Entity Framework", level: 55, color: "bg-violet-600" },
       { name: "Prisma", level: 30, color: "bg-indigo-600" },
-      { name: "Firebase", level: 20, color: "bg-yellow-600" },
     ],
   },
   {
@@ -81,19 +81,19 @@ export const SKILLS_CATEGORY = [
     description: "Deploying and scaling applications",
     skills: [
       {
-        name: "Docker",
-        level: 30,
-        color: "bg-blue-600",
-      },
-      {
-        name: "Vercel",
-        level: 30,
-        color: "bg-gray-900",
+        name: "AWS",
+        level: 45,
+        color: "bg-amber-600",
       },
       {
         name: "Git",
-        level: 50,
+        level: 60,
         color: "bg-orange-700",
+      },
+      {
+        name: "Docker",
+        level: 30,
+        color: "bg-blue-600",
       },
       {
         name: "CI/CD",
@@ -105,26 +105,31 @@ export const SKILLS_CATEGORY = [
 ];
 
 export const TECH_STACK = [
-  "JavaScript",
-  "Typescript",
-  "HTML5",
-  "CSS3",
-  "Tailwind",
-  "Webpack",
-  "Vite",
-  "Jest",
-  "Figma",
-  "Adobe XD",
-  "Github",
-  "Slack",
-  "Sql",
-  ".Net",
   "C#",
+  ".NET",
+  "ASP.NET Core",
+  "TypeScript",
+  "React",
+  "Next.js",
+  "Redux",
+  "tRPC",
+  "Prisma",
+  "Entity Framework",
+  "GraphQL",
+  "Vitest",
+  "Playwright",
+  "Jest",
+  "XUnit",
+  "Crystal Reports",
+  "Swagger",
+  "Figma",
+  "Jira",
+  "Git",
 ];
 
 export const STATS = [
-  // { number: "+", label: "Projects Completed" },
-  { number: "4+", label: "Years Experience" },
+  { number: "5+", label: "Years Experience" },
+  { number: "5+", label: "Projects Delivered" },
   { number: "28+", label: "Technologies" },
 ];
 
@@ -157,18 +162,6 @@ export const PROJECTS: Project[] = [
       "MongoDB",
       "AWS",
     ],
-    liveUrl: "#",
-    githubUrl: "#",
-    featured: false,
-    category: "Full Stack",
-  },
-  {
-    id: 3,
-    title: "Pharmacy Management System",
-    description:
-      "Application for managing pharmacy inventory and sales, built with React and C# for real-time product updates.",
-    image: "PROJECT_IMG_3",
-    tags: [".NET", "React", "C#", "MySQL"],
     liveUrl: "#",
     githubUrl: "#",
     featured: false,
@@ -210,7 +203,7 @@ export const PROJECTS: Project[] = [
     title: "School Genesis Platform",
     description:
       "Educational management platform for schools, featuring teacher, student, and parent modules, designed with .NET microservices.",
-    image: PROJECT_IMG_6,
+    image: "",
     tags: [
       ".NET",
       "C#",
@@ -301,60 +294,70 @@ export const PROJECTS: Project[] = [
 
 export const JOURNEY_STEPS = [
   {
-    year: "2021",
-    title: "Started Coding Journey",
-    company: "Self-taught",
+    year: "2018",
+    title: "Computer Engineering Degree",
+    company: "San Simón University",
     description:
-      "Began learning web development with HTML, CSS, and JavaScript. Built my first website and fell in love with coding",
-    icon: "Code2",
-    color: "bg-blue-500",
-  },
-  {
-    year: "2022",
-    title: "First Internship",
-    company: "TechStart Inc.",
-    description:
-      "Joined as a frontend intern, working with React and learning modern development practices. Contributed to multiple client projects",
-    icon: "Briefcase",
-    color: "bg-green-500",
-  },
-  {
-    year: "2022",
-    title: "Computer Science Degree",
-    company: "University of Technology",
-    description:
-      "Graduated with honors, specializing in web technologies and software engineering. Led the final year capstone project",
+      "Graduated in Computer Engineering, building a strong foundation in software design, databases, and object-oriented programming.",
     icon: "GraduationCap",
     color: "bg-purple-500",
   },
   {
-    year: "2023",
+    year: "2019",
     title: "Full Stack Developer",
-    company: "Digital Solutions Ltd.",
+    company: "JHorizon",
     description:
-      "Promoted to full-time developer role. Built end-to-end applications using MERN stack and led junior developers",
+      "Built School Genesis, a school management platform, using a .NET microservice architecture with C#, Entity Framework, and ASP.NET Core Web APIs documented with Swagger.",
+    icon: "Code2",
+    color: "bg-blue-500",
+  },
+  {
+    year: "2021",
+    title: "Backend & Frontend Developer",
+    company: "Jalasoft",
+    description:
+      "Developed and maintained web applications with .NET, C#, and React.js. Built check-generation systems with Crystal Reports and optimized SQL Server stored procedures.",
+    icon: "Briefcase",
+    color: "bg-green-500",
+  },
+  {
+    year: "2023",
+    title: "Freelance Software Developer",
+    company: "Independent",
+    description:
+      "Designed and delivered a pharmacy management application with React, C#, and MySQL, enabling real-time inventory and sales tracking.",
     icon: "Rocket",
     color: "bg-orange-500",
   },
   {
     year: "2024",
-    title: "Freelance & Open Source",
-    company: "Independent",
+    title: "Frontend Developer",
+    company: "MagicTechnology",
     description:
-      "Started freelancing and contributing to open source projects. Launched 3 successful web applications",
+      "Built the MT ERP system for a tech-import company using React, TypeScript, Formik, and Redux, with a NestJS + GraphQL backend over MongoDB.",
     icon: "Award",
     color: "bg-pink-500",
   },
   {
     year: "2025",
-    title: "Senior Developer",
-    company: "Present",
+    title: "Backend & Frontend Developer",
+    company: "PostReminder",
     description:
-      "Currently building innovative solutions and exploring new technologies like AI integration and advanced web architectures",
+      "Building scalable, type-safe web applications with Next.js, tRPC, and Prisma, backed by MySQL and tested end-to-end with Vitest and Playwright.",
     icon: "Zap",
     color: "bg-cyan-500",
   },
 ];
+
+export const CONTACT_INFO = {
+  email: "paola.quintanilla001@gmail.com",
+  location: "Bolivia",
+};
+
+export const SOCIAL_LINKS = {
+  github: "https://github.com/PaolaQuintanilla",
+  linkedin: "https://www.linkedin.com/in/paola-q-910032207/",
+};
 
 export const PASSIONS = [
   {

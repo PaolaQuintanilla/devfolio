@@ -24,7 +24,7 @@ export const SkillsSection = () => {
 
   const skillBarVariants = {
     hidden: { width: 0, opacity: 0 },
-    visible: (level) => ({
+    visible: (level: number) => ({
       width: `${level}%`,
       opacity: 1,
       transition: {
@@ -59,7 +59,7 @@ export const SkillsSection = () => {
       <div className={`max-w-6xl mx-auto relative z-10`}>
         {/* Section header */}
         <motion.div
-          initial={itemVariants}
+          initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={containerVariants}
           className="text-center mb-20"
@@ -67,7 +67,7 @@ export const SkillsSection = () => {
           <motion.div
             variants={itemVariants as Variants}
             className={`text-sm uppercase tracking-widest ${
-              isDarkMode ? "text-gary-500" : "text-gray-600"
+              isDarkMode ? "text-gray-500" : "text-gray-600"
             } mb-4`}
           >
             Technical Expertise
@@ -96,7 +96,7 @@ export const SkillsSection = () => {
           variants={containerVariants}
           className="grid md:grid-cols-2 gap-8 lg:gap-12"
         >
-          {SKILLS_CATEGORY.map((category, categoryIndex) => (
+          {SKILLS_CATEGORY.map((category) => (
             <motion.div
               key={category.title}
               variants={itemVariants as Variants}
@@ -116,7 +116,7 @@ export const SkillsSection = () => {
                   <category.icon size={24} className="text-blue-500" />
                 </div>
                 <div>
-                  <h3 className="">{category.title}</h3>
+                  <h3 className="text-xl font-medium">{category.title}</h3>
                   <p
                     className={`text-sm ${
                       isDarkMode ? "text-gray-400" : "text-gray-600"
@@ -127,12 +127,12 @@ export const SkillsSection = () => {
                 </div>
               </div>
               <div>
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skill.name} className="group">
+                {category.skills.map((skill) => (
+                  <div key={skill.name} className="group mb-4">
                     <div className="flex justify-between items-center mb-2">
-                      <span className="">{skill.name}</span>
+                      <span className="text-sm font-medium">{skill.name}</span>
                       <span
-                        className={`text-x s ${
+                        className={`text-xs ${
                           isDarkMode ? "text-gray-500" : "text-gray-600"
                         }`}
                       >
@@ -179,7 +179,7 @@ export const SkillsSection = () => {
             variants={itemVariants as Variants}
             className="flex flex-wrap justify-center gap-3"
           >
-            {TECH_STACK.map((tech, index) => (
+            {TECH_STACK.map((tech) => (
               <motion.span
                 key={tech}
                 whileHover={{ y: -2, scale: 1.05 }}
@@ -202,7 +202,7 @@ export const SkillsSection = () => {
           variants={containerVariants}
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
         >
-          {STATS.map((stat, key) => (
+          {STATS.map((stat) => (
             <motion.div
               key={stat.label}
               variants={itemVariants as Variants}

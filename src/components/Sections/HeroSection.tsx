@@ -417,7 +417,7 @@ const HeroSection = () => {
                       isDarkMode ? "text-gray-600" : "text-gray-500"
                     }`}
                   >
-                    Nest Js
+                    Next.Js
                   </span>
                   <span
                     className={`${
@@ -432,6 +432,20 @@ const HeroSection = () => {
                     }`}
                   >
                     Typescript
+                  </span>
+                  <span
+                    className={`${
+                      isDarkMode ? "text-gray-700" : "text-gray-400"
+                    }`}
+                  >
+                    .
+                  </span>
+                  <span
+                    className={`${
+                      isDarkMode ? "text-gray-600" : "text-gray-500"
+                    }`}
+                  >
+                    SQL
                   </span>
                   <span
                     className={`${

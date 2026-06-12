@@ -70,7 +70,7 @@ const ProjectsSection = () => {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={containerVariants}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gab-8"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {PROJECTS.map((project, index) => (
             <ProjectCard
