@@ -4,6 +4,7 @@ import { FiGithub, FiLinkedin } from "react-icons/fi";
 import PROFILE_PIC from "../../assets/profile.jpeg";
 import { useTheme } from "../../context/useTheme";
 import { containerVariants, itemVariants } from "../../utils/helper";
+import { CONTACT_INFO, SOCIAL_LINKS } from "../../utils/data";
 // import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const HeroSection = () => {
@@ -155,7 +156,7 @@ const HeroSection = () => {
                   isDarkMode ? "text-gray-500" : "text-gray-600"
                 } mb-4`}
               >
-                Full Stack Developer
+                Full Stack Developer <span className="ml-1">🎀</span>
               </motion.div>
 
               <motion.h1
@@ -216,9 +217,9 @@ const HeroSection = () => {
                 className="flex justify-center gap-4 mt-8"
               >
                 {[
-                  { icon: FiGithub, href: "#" },
-                  { icon: FiLinkedin, href: "#" },
-                  { icon: Mail, href: "mailto:contact@example.com" },
+                  { icon: FiGithub, href: SOCIAL_LINKS.github },
+                  { icon: FiLinkedin, href: SOCIAL_LINKS.linkedin },
+                  { icon: Mail, href: `mailto:${CONTACT_INFO.email}` },
                 ].map((social, index) => (
                   <motion.a
                     key={index}
@@ -302,7 +303,7 @@ const HeroSection = () => {
                   isDarkMode ? "text-gray-400" : "text-gray-600"
                 }`}
               >
-                Full Stack Developer
+                Full Stack Developer <span className="ml-1">🎀</span>
               </motion.div>
               <motion.h1
                 variants={itemVariants as Variants}
@@ -365,9 +366,9 @@ const HeroSection = () => {
                 className="flex space-x-6 mb-12"
               >
                 {[
-                  { icon: FiGithub, href: "#" },
-                  { icon: FiLinkedin, href: "#" },
-                  { icon: Mail, href: "#" },
+                  { icon: FiGithub, href: SOCIAL_LINKS.github },
+                  { icon: FiLinkedin, href: SOCIAL_LINKS.linkedin },
+                  { icon: Mail, href: `mailto:${CONTACT_INFO.email}` },
                 ].map((social, index) => (
                   <motion.a
                     key={index}
