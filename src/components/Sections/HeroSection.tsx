@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform, type Variants } from "framer-motion";
 import { ArrowDown, Mail } from "lucide-react";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
-import PROFILE_PIC from "../../assets/profile.jpg";
+import PROFILE_PIC from "../../assets/profile.jpeg";
 import { useTheme } from "../../context/useTheme";
 import { containerVariants, itemVariants } from "../../utils/helper";
 // import { FaGithub, FaLinkedin } from "react-icons/fa";
